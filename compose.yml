@@ -1,0 +1,29 @@
+services:
+  tunas-odoo:
+    image: odoo:15.0
+    env_file: .tunas-env
+    depends_on:
+      - tunas-db
+    ports:
+      - "8069:8069"
+    volumes:
+      - tunas-odoo-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    secrets:
+      - postgresql_password
+  tunas-db:
+    image: postgres:13
+    env_file: .tunas-env
+    volumes:
+      - tunas-db-data:/var/lib/postgresql/data/pgdata
+    secrets:
+      - postgresql_password
+
+volumes:
+  tunas-odoo-data:
+  tunas-db-data:
+
+secrets:
+  postgresql_password:
+    file: odoo_pg_pass

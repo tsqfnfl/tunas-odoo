@@ -1,0 +1,8 @@
+POSTGRES_DB=postgres
+POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
+POSTGRES_USER=odoo
+PGDATA=/var/lib/postgresql/data/pgdata
+
+HOST=tunas-db
+USER=odoo
+PASSWORD_FILE=/run/secrets/postgresql_password
