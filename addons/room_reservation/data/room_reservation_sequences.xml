@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Format: <TYPE>-<SEQ>-<DATE> -->
+        <!-- Note that the value for <DATE> will be added using Python -->
+        <record id="seq_room_reservation_small_meeting" model="ir.sequence">
+            <field name="name">Room Reservation - Small Meeting</field>
+            <field name="code">room.reservation.small_meeting</field>
+            <field name="prefix">SM-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_room_reservation_large_meeting" model="ir.sequence">
+            <field name="name">Room Reservation - Large Meeting</field>
+            <field name="code">room.reservation.large_meeting</field>
+            <field name="prefix">LM-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_room_reservation_hall" model="ir.sequence">
+            <field name="name">Room Reservation - Hall</field>
+            <field name="code">room.reservation.hall</field>
+            <field name="prefix">H-</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

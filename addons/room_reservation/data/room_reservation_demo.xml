@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="room_reservation_1" model="room.reservation">
+            <field name="room_id" ref="room_2"/>
+            <field name="name">Town Hall Meeting</field>
+            <field name="date" eval="(DateTime.today() + relativedelta(days=5)).strftime('%Y-%m-%d')"/>
+            <field name="state">draft</field>
+        </record>
+
+        <record id="room_reservation_2" model="room.reservation">
+            <field name="room_id" ref="room_1"/>
+            <field name="name">Finance Department Meeting</field>
+            <field name="date" eval="(DateTime.today()).strftime('%Y-%m-%d')"/>
+            <field name="state">on_going</field>
+        </record>
+
+        <record id="room_reservation_3" model="room.reservation">
+            <field name="room_id" ref="room_4"/>
+            <field name="name">HR Department Meeting</field>
+            <field name="date" eval="(DateTime.today() + relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="state">draft</field>
+        </record>
+
+        <record id="room_reservation_4" model="room.reservation">
+            <field name="room_id" ref="room_3"/>
+            <field name="name">Product Launch</field>
+            <field name="date" eval="(DateTime.today() + relativedelta(days=17)).strftime('%Y-%m-%d')"/>
+            <field name="state">draft</field>
+        </record>        
+    </data>
+</odoo>

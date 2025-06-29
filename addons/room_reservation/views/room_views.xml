@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_room_tree" model="ir.ui.view">
+            <field name="name">room.room.tree</field>
+            <field name="model">room.room</field>
+            <field name="arch" type="xml">
+                <tree string="Ruangan">
+                    <field name="name"/>
+                    <field name="room_type"/>
+                    <field name="location"/>
+                    <field name="capacity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_room_kanban" model="ir.ui.view">
+            <field name="name">room.room.kanban</field>
+            <field name="model">room.room</field>
+            <field name="arch" type="xml">
+                <kanban string="Ruangan">
+                    <field name="name"/>
+                    <field name="room_type"/>
+                    <field name="location"/>
+                    <field name="capacity"/>
+                    <field name="id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img t-att-src="kanban_image('room.room', 'photo', record.id.raw_value)" alt="Room" class="o_image_64_contain"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <div>
+                                        <strong><field name="name"/></strong>
+                                    </div>
+                                    <div>Tipe: <t t-esc="record.room_type.value"/></div>
+                                    <div>Lokasi: <t t-esc="record.location.value"/></div>
+                                    <div>Kapasitas: <t t-esc="record.capacity.value"/></div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="view_room_form" model="ir.ui.view">
+            <field name="name">room.room.form</field>
+            <field name="model">room.room</field>
+            <field name="arch" type="xml">
+                <form string="Ruangan">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="room_type"/>
+                                <field name="location"/>
+                                <field name="capacity"/>
+                            </group>
+                            <group>
+                                <field name="photo" filename="photo_name" widget="binary" options="{'accepted_file_extensions': 'image/*'}"/>
+                                <field name="photo_name" invisible="1"/>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_room" model="ir.actions.act_window">
+            <field name="name">Room</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">room.room</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Buat Ruangan
+                </p>
+            </field>
+        </record>
+
+         <menuitem name="Ruangan" id="menu_room_root" sequence="99"/>
+         <menuitem name="Master Ruangan" id="menu_room" action="action_room" parent="menu_room_root" sequence="1"/>
+    </data>
+</odoo>

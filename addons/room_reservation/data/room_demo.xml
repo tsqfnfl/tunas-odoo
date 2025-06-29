@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="room_1" model="room.room">
+            <field name="name">Asoka</field>
+            <field name="room_type">small_meeting</field>
+            <field name="location">1b</field>
+            <field name="photo" type="base64" file="base/tests/odoo.jpg"/>
+            <field name="capacity">10</field>
+        </record>
+
+        <record id="room_2" model="room.room">
+            <field name="name">Anggrek</field>
+            <field name="room_type">large_meeting</field>
+            <field name="location">1a</field>
+            <field name="photo" type="base64" file="base/tests/odoo.jpg"/>
+            <field name="capacity">30</field>
+        </record>
+
+        <record id="room_3" model="room.room">
+            <field name="name">Dahlia</field>
+            <field name="room_type">hall</field>
+            <field name="location">2a</field>
+            <field name="photo" type="base64" file="base/tests/odoo.jpg"/>
+            <field name="capacity">150</field>
+        </record>
+
+        <record id="room_4" model="room.room">
+            <field name="name">Tulip</field>
+            <field name="room_type">small_meeting</field>
+            <field name="location">2c</field>
+            <field name="photo" type="base64" file="base/tests/odoo.jpg"/>
+            <field name="capacity">12</field>
+        </record>
+    </data>
+</odoo>
