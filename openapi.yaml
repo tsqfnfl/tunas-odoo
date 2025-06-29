@@ -1,0 +1,91 @@
+openapi: 3.0.0
+info:
+  title: tunas-odoo
+  description: 'List of API for technical assessment held by Tunas Group'
+  version: 1.0.0
+servers:
+  - url: localhost
+paths:
+  '/api/room-reservation/{number}':
+    get:
+      summary: Get state of room reservation
+      parameters:
+        - name: number
+          in: path
+          description: Number of room reservation
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Set-Cookie:
+              schema:
+                type: string
+            Server:
+              schema:
+                type: string
+            Date:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  state:
+                    type: string
+        '400':
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Set-Cookie:
+              schema:
+                type: string
+            Server:
+              schema:
+                type: string
+            Date:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+        '404':
+          headers:
+            Content-Type:
+              schema:
+                type: string
+            Content-Length:
+              schema:
+                type: integer
+            Set-Cookie:
+              schema:
+                type: string
+            Server:
+              schema:
+                type: string
+            Date:
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
